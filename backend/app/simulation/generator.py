@@ -33,7 +33,31 @@ def seed_initial_data():
         )
         session.add(vulnerability)
         session.commit()
-        print("🌱 Seeded initial network assets & vulnerabilities into database.")
+
+        # Seed sample incidents so Incident Response page is pre-populated
+        existing_incidents = session.exec(select(Incident)).all()
+        if not existing_incidents:
+            sample_incidents = [
+                Incident(
+                    deviation_score=0.92,
+                    hack_methodology="Unauthorized Cross-Zone Privilege Escalation",
+                    predicted_target="Core-DB-Primary (10.0.2.50)",
+                    explainable_narrative="Autonomous AI agent triggered after detecting unauthorized cross-zone access attempt from DMZ Web Server (10.0.1.10) to internal SQL cluster with a live deviation score of 0.92.",
+                    source_asset_ip="10.0.1.10",
+                    is_resolved=False
+                ),
+                Incident(
+                    deviation_score=0.84,
+                    hack_methodology="Privileged Token Misuse & Credential Exploitation",
+                    predicted_target="Auth-Vault-01 (10.0.2.99)",
+                    explainable_narrative="Late-night administrative token usage detected from workstation 10.0.3.15 attempting access to PCI zone vault. AI threat mapper flagged high likelihood of compromised credential.",
+                    source_asset_ip="10.0.3.15",
+                    is_resolved=False
+                )
+            ]
+            session.add_all(sample_incidents)
+            session.commit()
+        print("🌱 Seeded initial network assets, vulnerabilities & AI incidents into database.")
 
 
 def run_attack_scenario(scenario_type: str, target_zone: str):

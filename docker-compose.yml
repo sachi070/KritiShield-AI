@@ -1,12 +1,12 @@
 version: "3.9"
 
 services:
-  backend:
+  app:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
 
-    container_name: kritishield-backend
+    container_name: kritishield-app
 
     ports:
       - "8000:8000"
@@ -15,27 +15,10 @@ services:
       - ./backend/.env
 
     volumes:
-      - ./backend:/app
+      - ./backend:/app/backend
 
     depends_on:
       - postgres
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-
-    container_name: kritishield-frontend
-
-    ports:
-      - "5173:5173"
-
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-
-    depends_on:
-      - backend
 
   postgres:
     image: postgres:16
