@@ -76,8 +76,8 @@ flowchart LR
 | Backend framework | Python 3 + FastAPI |
 | Database | PostgreSQL |
 | Graph computation | NetworkX |
-| Agentic framework | CrewAI / LangChain |
-| Vector store (RAG) | Qdrant / ChromaDB |
+| Agentic framework | CrewAI |
+| Vector store (RAG) | Qdrant |
 | LLM inference | Llama 3 via fast-hosting API (e.g. Groq) |
 | Frontend | React (ES6+), HTML5, CSS3 |
 | Styling | Tailwind CSS |
