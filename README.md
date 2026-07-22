@@ -105,7 +105,6 @@ kritishield-ai/
 ### Backend
 ```bash
 cd backend
-pip install -r requirements.txt
 # configure DB connection and secrets in .env
 uvicorn main:app --reload
 ```
