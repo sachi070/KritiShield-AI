@@ -133,11 +133,11 @@ npm run dev
 
 ## 👥 Team
 
-| Role | Focus |
+**|Name | Role | Focus |**
 |---|---|
-| Infrastructure & Systems Engineer | Backend, database, simulation engine, topology graph |
-| AI & Intelligence Engineer | Anomaly detection, multi-agent orchestration, RAG |
-| Frontend & UX Engineer | Security command center dashboard |
+| Omkar Dahiphale | Infrastructure & Systems Engineer | Backend, database, simulation engine, topology graph |
+| Sachi Godbole | AI & Intelligence Engineer | Anomaly detection, multi-agent orchestration, RAG |
+| Neel Joglekar | Frontend & UX Engineer | Security command center dashboard |
 
 ---
 
